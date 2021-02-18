@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2021_02_17_052907) do
   create_table "book_authors", force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "author_id", null: false
-    t.integer "ref_id"
+    t.integer "duplicate_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_book_authors_on_author_id"
     t.index ["book_id"], name: "index_book_authors_on_book_id"
-    t.index ["ref_id"], name: "index_book_authors_on_ref_id"
+    t.index ["duplicate_of"], name: "index_book_authors_on_duplicate_of"
   end
 
   create_table "books", force: :cascade do |t|
