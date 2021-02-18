@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-     def show
+    def show
         @book = Book.find_by(id: params[:id])
         render "books/show"
     end
