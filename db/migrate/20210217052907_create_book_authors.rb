@@ -10,5 +10,6 @@ class CreateBookAuthors < ActiveRecord::Migration[5.2]
 
     add_index :book_authors, :book_id
     add_index :book_authors, :author_id
+    add_index :book_authors, :ref_id
   end
 end

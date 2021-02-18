@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_02_17_052907) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_book_authors_on_author_id"
     t.index ["book_id"], name: "index_book_authors_on_book_id"
+    t.index ["ref_id"], name: "index_book_authors_on_ref_id"
   end
 
   create_table "books", force: :cascade do |t|
