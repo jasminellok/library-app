@@ -1,4 +1,5 @@
 require 'rails_helper'
+#to run bundle exec rspec spec/models/book_author_spec.rb
 
 RSpec.describe BookAuthor, type: :model do
   describe "validations" do
