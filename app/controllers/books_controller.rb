@@ -5,7 +5,7 @@ class BooksController < ApplicationController
     end
     
     def index
-        @books = Books.all.includes(:authors)
+        @books = Book.all.includes(:authors)
         render "books/index"
     end
 end
