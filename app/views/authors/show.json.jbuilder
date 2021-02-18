@@ -1,0 +1,1 @@
+json.extract! @author, :full_name
