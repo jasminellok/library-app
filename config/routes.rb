@@ -2,6 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root "static_pages#root"
   resources :authors, only: [:index, :show]
-  resources :books, only: [:index, :show]
-  resources :book_authors, only: [:create, :destroy]
+  resources :books, only: [:index, :show, :update]
+
 end
