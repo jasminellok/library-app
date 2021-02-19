@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_17_052907) do
+ActiveRecord::Schema.define(version: 2021_02_19_051348) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,18 +25,18 @@ ActiveRecord::Schema.define(version: 2021_02_17_052907) do
   create_table "book_authors", force: :cascade do |t|
     t.integer "book_id", null: false
     t.integer "author_id", null: false
-    t.integer "duplicate_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_book_authors_on_author_id"
     t.index ["book_id"], name: "index_book_authors_on_book_id"
-    t.index ["duplicate_of"], name: "index_book_authors_on_duplicate_of"
   end
 
   create_table "books", force: :cascade do |t|
     t.string "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "parent_id"
+    t.index ["parent_id"], name: "index_books_on_parent_id"
     t.index ["title"], name: "index_books_on_title", unique: true
   end
 
