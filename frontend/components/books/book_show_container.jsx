@@ -36,6 +36,10 @@ class BookShow extends React.Component {
             <ul> 
                 {bookAuthors}
             </ul>
+
+            <h2>Book also known as:</h2>
+
+
         </div>)
     }
 }
