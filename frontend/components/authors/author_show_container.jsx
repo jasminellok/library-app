@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { fetchAuthor} from '../../actions/author_actions';
 
 class AuthorShow extends React.Component {
@@ -28,6 +29,8 @@ class AuthorShow extends React.Component {
 
 
         return (<div>
+            <Link to={`/`}>Go Back to Home</Link>
+            
             <h1>Author: {this.props.author.full_name}</h1>
 
             <h2>Books written:</h2>
