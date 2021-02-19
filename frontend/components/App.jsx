@@ -1,8 +1,10 @@
 import React from "react";
+import { Route, Switch } from "react-router";
+import AuthorIndexContainer from "./authors/author_index_container";
 
 const App = () => (
   <div>
-    <h1>Cute little library</h1>
+    <AuthorIndexContainer />
   </div>
 );
 

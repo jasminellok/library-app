@@ -1,2 +1,2 @@
-json.extract! @book, :title
+json.extract! @book, :id, :title
 json.authorId @book.authors
