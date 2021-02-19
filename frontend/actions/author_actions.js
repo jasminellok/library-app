@@ -1,4 +1,4 @@
-import * as ApiUtil from '../util/author_util';
+import * as Util from '../util/author_util';
 
 export const REC_AUTHOR = 'REC_AUTHOR';
 export const REC_ALL_AUTHORS = 'REC_ALL_AUTHORS';
@@ -21,11 +21,11 @@ const recAuthor = (author) => {
 
 
 export const fetchAllAuthors = () => dispatch => {
-    return ApiUtil.fetchAllAuthors()
+    return Util.fetchAllAuthors()
         .then((authors) => dispatch(recAllAuthors(authors)));
 }
 
 export const fetchAuthor = (authordId) => dispatch => {
-    return ApiUtil.fetchBoard(authordId)
+    return Util.fetchAuthor(authordId)
         .then((author) => dispatch(recAuthor(author)));
 }
