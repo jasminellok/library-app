@@ -8,4 +8,13 @@ class Book < ApplicationRecord
     has_many :authors, 
         through: :book_authors,
         source: :author
+
+    belongs_to :parent,
+        foreign_key: :parent_id, 
+        class_name: :Book
+
+    has_many :children,
+        foreign_key: :parent_id, 
+        class_name: :Book
+
 end

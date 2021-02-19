@@ -10,5 +10,7 @@ RSpec.describe Book, type: :model do
 
   describe "associations" do
     it {should have_many(:authors).through(:book_authors)}
+    it { should belong_to(:parent).class_name('Book') }
+    it {should have_many(:children)}
   end 
 end
