@@ -1,12 +1,12 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import AuthorIndexContainer from "./authors/author_index_container";
+import Splash from "./splash";
 import AuthorShowContainer from "./authors/author_show_container";
 
 const App = () => (
   <div>
     <Switch>
-        <Route exact path="/" component={AuthorIndexContainer} />
+        <Route exact path="/" component={Splash} />
         <Route exact path="/authors/:authorId" component={AuthorShowContainer} />
     </Switch>
   </div>
