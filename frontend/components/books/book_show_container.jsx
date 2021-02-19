@@ -6,12 +6,22 @@ import { fetchBook} from '../../actions/book_actions';
 class BookShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-        }
+        this.duplicate = this.duplicate.bind(this);
     }
    
     componentDidMount() {
         this.props.fetchBook(this.props.match.params.bookId) 
+    }
+
+    duplicate(arr) {
+        if(!arr || arr.length===0) return
+        const list = arr.map((book) => {
+            return (<li key={`book-dup-ref-item${book.id}`}>
+                {book.title}
+            </li>)
+        })
+
+        return list;
     }
 
     render() { 
@@ -27,6 +37,11 @@ class BookShow extends React.Component {
             bookAuthors = null
         }
 
+        let parent = this.props.book.parent;
+        let refOrDup;
+
+        refOrDup = parent ? parent.title : this.duplicate(this.props.book.children)
+
         return (<div>
             <Link to={`/`}>Go Back to Home</Link>
             
@@ -37,8 +52,11 @@ class BookShow extends React.Component {
                 {bookAuthors}
             </ul>
 
-            <h2>Book also known as:</h2>
-
+            <h2>{parent ? "Reference Original Title:" : "Duplicate Titles:"}</h2>
+            <ul>
+                {refOrDup}
+            </ul>
+            
 
         </div>)
     }
