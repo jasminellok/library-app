@@ -1,4 +1,4 @@
-# Whooo's Reading Mini Library 
+# Mini Library 
 
 ## Completed Functionality, Concept, Specs:
 - [x] Have books entity where books have one title and multiple authors
